@@ -1,0 +1,44 @@
+info:
+  name: List groups
+  type: http
+  seq: 1
+  tags:
+    - Groups
+
+http:
+  method: GET
+  url: "{{baseUrl}}/groups"
+  params:
+    - name: page[number]
+      value: "1"
+      type: query
+    - name: page[size]
+      value: "25"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Successful response
+    request:
+      url: "{{baseUrl}}/groups"
+      method: GET
+      params:
+        - name: page[number]
+          value: "1"
+          type: query
+        - name: page[size]
+          value: "25"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

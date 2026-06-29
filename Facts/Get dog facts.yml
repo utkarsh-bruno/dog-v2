@@ -1,0 +1,49 @@
+info:
+  name: Get dog facts
+  type: http
+  seq: 1
+  tags:
+    - Facts
+
+http:
+  method: GET
+  url: "{{baseUrl}}/facts"
+  params:
+    - name: limit
+      value: "1"
+      type: query
+      description: Number of facts to return (1-5)
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Successful response
+    request:
+      url: "{{baseUrl}}/facts"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "data": [
+              {
+                "id": "0cc1145b-4b51-4f6b-9c80-63bcdce6dbb1",
+                "type": "fact",
+                "attributes": {
+                  "body": "Dogs like to chew bones but cooked bones and bones that can splinter such as cooked chicken bones should not be given to dogs."
+                }
+              }
+            ]
+          }

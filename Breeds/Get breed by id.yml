@@ -1,0 +1,38 @@
+info:
+  name: Get breed by id
+  type: http
+  seq: 2
+  tags:
+    - Breeds
+
+http:
+  method: GET
+  url: "{{baseUrl}}/breeds/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Successful response
+    request:
+      url: "{{baseUrl}}/breeds/:id"
+      method: GET
+      params:
+        - name: id
+          value: ""
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""
