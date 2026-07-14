@@ -47,3 +47,20 @@ examples:
               }
             ]
           }
+  - name: 400 Response
+    description: Successful response
+    request:
+      url: "{{baseUrl}}/facts"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "error" : "Something went wrong"
+          }
