@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/facts"
   params:
     - name: limit
-      value: "1"
+      value: "2"
       type: query
       description: Number of facts to return (1-5)
   auth: inherit
