@@ -7,7 +7,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/breed"
+  url: "{{baseUrl}}/breeds"
   auth: inherit
 
 settings:
