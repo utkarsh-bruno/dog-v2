@@ -7,7 +7,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/breed/:id"
+  url: "{{baseUrl}}/breeds/:id"
   params:
     - name: id
       value: ""
