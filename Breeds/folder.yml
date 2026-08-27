@@ -4,5 +4,7 @@ info:
   seq: 1
 
 request:
+  headers:
+    - name: aaa
+      value: ""
   auth: inherit
-# change 1
