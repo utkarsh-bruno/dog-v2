@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: https://echo.usebruno.com
+
   auth: inherit
 
 settings:
